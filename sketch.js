@@ -1,14 +1,3 @@
-// Acao, aventura, drama, comedia
-
-// Divertida mente 2, LIVRE, aventura
-// Como treinar o seu dragao 3, LIVRE, acao, aventura
-
-// As aventura de pi,10, aventura
-// Depois da chuva, 10, drama
-// Godzilla e kong: O novo imperio, 12, acao, aventura
-// Homem aranha: no aranhaverso, 12, comedia
-// Missao: impossivel- efeito fallout, 14, acao
-
 let campoIdade;
 let campoAventura;
 let campoAcao;
@@ -16,10 +5,29 @@ let campoAcao;
 function setup() {
   createCanvas(700, 400);
   createElement("h2", "Recomendador de filmes");
-  createSpan("Sua Idade:");
+  
+  const form = createElement("form");
+  
+  const idadeLabel = createElement("label", "Sua Idade:");
+  idadeLabel.parent(form);
   campoIdade = createInput("5");
-  campoAventura = createCheckbox("Gosta de Aventura?");
-  campoAcao = createCheckbox("Gosta de Acao?");
+  campoIdade.parent(form);
+  
+  const aventuraLabel = createElement("label", "Gosta de Aventura?");
+  aventuraLabel.parent(form);
+  campoAventura = createCheckbox("");
+  campoAventura.parent(form);
+  
+  const acaoLabel = createElement("label", "Gosta de Ação?");
+  acaoLabel.parent(form);
+  campoAcao = createCheckbox("");
+  campoAcao.parent(form);
+  
+  const button = createButton("Recomendar Filme");
+  button.parent(form);
+  button.mousePressed(() => redraw());
+
+  noLoop();
 }
 
 function draw() {
@@ -45,7 +53,7 @@ function geraRecomendacao(idade, gostaDeAventura, gostaDeAcao) {
         } else {
             return "Godzilla e kong: O novo imperio";
         }
-      
+
       } else {
         if (gostaDeAventura) {
           return "As aventura de pi";
