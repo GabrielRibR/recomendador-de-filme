@@ -1,65 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 html, body {
   margin: 0;
   padding: 0;
-  background-color: rgb(221,233,251);
-  font-family: 'Arial', sans-serif;
+  background-color: #f0f4fa;
+  font-family: 'Poppins', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  flex-direction: column;
-  color: #4d0073;
+}
+
+#form-container {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 h2 {
+  color: #4D0073;
+  font-size: 24px;
   margin-bottom: 20px;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
-}
-
-label {
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
-input, select {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+span, label {
+  color: #555;
   font-size: 16px;
-  width: 200px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  margin-top: 10px;
+  width: 120px;
+  text-align: center;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: #4D0073;
 }
 
 input[type="checkbox"] {
-  width: auto;
+  margin-right: 10px;
 }
 
 button {
-  background-color: #4d0073;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #4D0073;
   color: white;
-  padding: 10px 15px;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
   font-size: 16px;
-  margin-top: 15px;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
-  background-color: #3a0057;
+  background-color: #3b0059;
+  transform: translateY(-2px);
 }
 
 canvas {
   display: block;
-  margin-top: 20px;
+  margin-top: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
-
