@@ -12,7 +12,7 @@ html, body {
 }
 
 #form-container {
-  background: #ffffff;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -71,4 +71,5 @@ canvas {
   margin-top: 30px;
   border-radius: 15px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(45deg, #8360c3, #2ebf91);
 }
