@@ -2,6 +2,7 @@ let campoIdade;
 let campoAventura;
 let campoAcao;
 let botaoRecomendar;
+let corTexto = '#4D0073'; // Cor inicial do texto
 
 function setup() {
   createCanvas(700, 400);
@@ -22,14 +23,52 @@ function setup() {
     let gostaDeAventura = campoAventura.checked();
     let gostaDeAcao = campoAcao.checked();
     let recomendacao = geraRecomendacao(idade, gostaDeAventura, gostaDeAcao);
+    corTexto = corAleatoria(); // Gera uma cor aleatória
     desenhaRecomendacao(recomendacao);
   });
 }
 
 function desenhaRecomendacao(recomendacao) {
-  background("white");
-  fill(color(77, 0, 115));
+  background(lerpColor(color('#8360c3'), color('#2ebf91'), random()));
+  fill(corTexto);
   textAlign(CENTER, CENTER);
   textSize(28);
-  text(recomendacao, width / 2, height / 2);
+
+  // Posiciona o texto em uma posição aleatória dentro do canvas
+  let x = random(width * 0.3, width * 0.7);
+  let y = random(height * 0.3, height * 0.7);
+
+  text(recomendacao, x, y);
+}
+
+function geraRecomendacao(idade, gostaDeAventura, gostaDeAcao) {
+  if (idade >= 10) {
+    if (idade >= 14) {
+      return "Missão: Impossível - Efeito Fallout";
+    } else {
+      if (idade >= 12) {
+        if(gostaDeAventura || gostaDeAcao) {
+          return "Homem-Aranha: No Aranhaverso";
+        } else {
+          return "Godzilla e Kong: O Novo Império";
+        }
+      } else {
+        if (gostaDeAventura) {
+          return "As Aventuras de Pi";
+        } else {
+          return "Depois da Chuva";
+        }
+      }
+    }
+  } else {
+    if (gostaDeAventura) {
+      return "Como Treinar o Seu Dragão 3";
+    } else {
+      return "Divertida Mente 2";
+    }
+  }
+}
+
+function corAleatoria() {
+  return color(random(255), random(255), random(255));
 }
