@@ -2,7 +2,7 @@ let campoIdade;
 let campoAventura;
 let campoAcao;
 let botaoRecomendar;
-let corTexto = '#4D0073'; // Cor inicial do texto
+let corTexto = '#ff0033'; // Cor do texto que combina com o tema
 
 function setup() {
   createCanvas(700, 400);
@@ -23,22 +23,18 @@ function setup() {
     let gostaDeAventura = campoAventura.checked();
     let gostaDeAcao = campoAcao.checked();
     let recomendacao = geraRecomendacao(idade, gostaDeAventura, gostaDeAcao);
-    corTexto = corAleatoria(); // Gera uma cor aleatória
     desenhaRecomendacao(recomendacao);
   });
 }
 
 function desenhaRecomendacao(recomendacao) {
-  background(lerpColor(color('#8360c3'), color('#2ebf91'), random()));
+  background('#2c2c2c'); // Cor de fundo fixa, estilo dark
   fill(corTexto);
   textAlign(CENTER, CENTER);
   textSize(28);
 
-  // Posiciona o texto em uma posição aleatória dentro do canvas
-  let x = random(width * 0.3, width * 0.7);
-  let y = random(height * 0.3, height * 0.7);
-
-  text(recomendacao, x, y);
+  // Texto centralizado e estático
+  text(recomendacao, width / 2, height / 2);
 }
 
 function geraRecomendacao(idade, gostaDeAventura, gostaDeAcao) {
@@ -79,8 +75,4 @@ function geraRecomendacao(idade, gostaDeAventura, gostaDeAcao) {
   } else {
     return opcoes[3];
   }
-}
-
-function corAleatoria() {
-  return color(random(255), random(255), random(255));
 }
