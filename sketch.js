@@ -19,7 +19,7 @@ function setup() {
 
   botaoRecomendar = createButton("Recomendar").parent(form);
   botaoRecomendar.mousePressed(() => {
-    let idade = campoIdade.value();
+    let idade = parseInt(campoIdade.value());
     let gostaDeAventura = campoAventura.checked();
     let gostaDeAcao = campoAcao.checked();
     let recomendacao = geraRecomendacao(idade, gostaDeAventura, gostaDeAcao);
@@ -42,7 +42,6 @@ function desenhaRecomendacao(recomendacao) {
 }
 
 function geraRecomendacao(idade, gostaDeAventura, gostaDeAcao) {
-  idade = parseInt(idade);
   let filmes = {
     1: ["O Show da Luna", "Masha e o Urso", "Galinha Pintadinha", "Patrulha Canina"],
     2: ["Peppa Pig", "Dora, a Aventureira", "Trolls", "Meu Amigo Totoro"],
@@ -63,11 +62,12 @@ function geraRecomendacao(idade, gostaDeAventura, gostaDeAcao) {
     18: ["Gladiador", "O Resgate do Soldado Ryan", "Clube da Luta", "O Poderoso Chefão"]
   };
 
-  let opcoes = filmes[idade];
-  
-  if (!opcoes) {
-    return "Idade não encontrada";
+  // Verifica se a idade está no intervalo de 1 a 18
+  if (idade < 1 || idade > 18 || !filmes[idade]) {
+    return "Idade inválida. Por favor, insira uma idade entre 1 e 18.";
   }
+
+  let opcoes = filmes[idade];
 
   if (gostaDeAventura && gostaDeAcao) {
     return opcoes[0];
@@ -82,4 +82,4 @@ function geraRecomendacao(idade, gostaDeAventura, gostaDeAcao) {
 
 function corAleatoria() {
   return color(random(255), random(255), random(255));
-      }
+}
