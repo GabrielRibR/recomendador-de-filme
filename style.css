@@ -3,7 +3,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #f0f4fa;
+  background-color: #1b1b1b;
   font-family: 'Poppins', sans-serif;
   display: flex;
   justify-content: center;
@@ -12,21 +12,22 @@ html, body {
 }
 
 #form-container {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
   padding: 40px;
   border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   text-align: center;
+  width: 300px;
 }
 
 h2 {
-  color: #4D0073;
+  color: #ff0033;
   font-size: 24px;
   margin-bottom: 20px;
 }
 
 span, label {
-  color: #555;
+  color: #f1f1f1;
   font-size: 16px;
 }
 
@@ -35,14 +36,16 @@ input[type="text"] {
   margin-top: 10px;
   width: 120px;
   text-align: center;
-  border: 2px solid #ddd;
+  border: 2px solid #333;
+  background-color: #2a2a2a;
+  color: #f1f1f1;
   border-radius: 25px;
   outline: none;
   transition: border-color 0.3s;
 }
 
 input[type="text"]:focus {
-  border-color: #4D0073;
+  border-color: #ff0033;
 }
 
 input[type="checkbox"] {
@@ -52,7 +55,7 @@ input[type="checkbox"] {
 button {
   padding: 10px 20px;
   margin-top: 20px;
-  background-color: #4D0073;
+  background-color: #ff0033;
   color: white;
   border: none;
   border-radius: 25px;
@@ -62,7 +65,7 @@ button {
 }
 
 button:hover {
-  background-color: #3b0059;
+  background-color: #cc0029;
   transform: translateY(-2px);
 }
 
@@ -70,6 +73,6 @@ canvas {
   display: block;
   margin-top: 30px;
   border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(45deg, #8360c3, #2ebf91);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(45deg, #ff0033, #2c2c2c);
 }
