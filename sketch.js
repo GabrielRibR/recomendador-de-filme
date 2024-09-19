@@ -58,6 +58,7 @@ function geraRecomendacao(idade, gostaDeAventura, gostaDeAcao) {
     13: ["Harry Potter e a Pedra Filosofal", "Jogos Vorazes", "Star Wars: O Despertar da Força", "Pantera Negra"],
     14: ["Vingadores: Ultimato", "Missão Impossível - Efeito Fallout", "Transformers", "Capitã Marvel"],
     15: ["Mad Max: Estrada da Fúria", "Coringa", "Matrix", "John Wick"],
+    16: ["Logan", "V de Vingança", "Blade Runner 2049", "Homem de Ferro"],
     17: ["Inception", "O Cavaleiro das Trevas", "Duna", "Tenet"],
     18: ["Gladiador", "O Resgate do Soldado Ryan", "Clube da Luta", "O Poderoso Chefão"]
   };
