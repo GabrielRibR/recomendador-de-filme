@@ -42,49 +42,44 @@ function desenhaRecomendacao(recomendacao) {
 }
 
 function geraRecomendacao(idade, gostaDeAventura, gostaDeAcao) {
-  if (idade >= 10) {
-    if (idade >= 14) {
-      if (gostaDeAcao && gostaDeAventura) {
-        return "Mad Max: Estrada da Fúria";
-      } else if (gostaDeAcao) {
-        return "Vingadores: Ultimato";
-      } else if (gostaDeAventura) {
-        return "Star Wars: O Despertar da Força";
-      } else {
-        return "Missão: Impossível - Efeito Fallout";
-      }
-    } else {
-      if (idade >= 12) {
-        if(gostaDeAventura && gostaDeAcao) {
-          return "Guardiões da Galáxia Vol. 3";
-        } else if (gostaDeAventura) {
-          return "Homem-Aranha: No Aranhaverso";
-        } else if (gostaDeAcao) {
-          return "Transformers: O Despertar das Feras";
-        } else {
-          return "Godzilla e Kong: O Novo Império";
-        }
-      } else {
-        if (gostaDeAventura) {
-          return "As Aventuras de Pi";
-        } else {
-          return "Depois da Chuva";
-        }
-      }
-    }
+  idade = parseInt(idade);
+  let filmes = {
+    1: ["O Show da Luna", "Masha e o Urso", "Galinha Pintadinha", "Patrulha Canina"],
+    2: ["Peppa Pig", "Dora, a Aventureira", "Trolls", "Meu Amigo Totoro"],
+    3: ["Shrek", "Toy Story", "Frozen", "Os Minions"],
+    4: ["Carros", "Os Incríveis", "Detona Ralph", "Divertida Mente"],
+    5: ["Moana", "Zootopia", "Procurando Nemo", "Kung Fu Panda"],
+    6: ["O Rei Leão", "Como Treinar o Seu Dragão", "Valente", "Hotel Transilvânia"],
+    7: ["Enrolados", "Os Croods", "O Lorax", "Monstros S.A."],
+    8: ["Ratatouille", "Os Pinguins de Madagascar", "Bolt", "A Era do Gelo"],
+    9: ["Megamente", "Aviões", "O Grinch", "Os Smurfs"],
+    10: ["Madagascar", "Shrek 2", "Meu Malvado Favorito", "Turbo"],
+    11: ["Homem-Aranha no Aranhaverso", "Big Hero 6", "Viva - A Vida é uma Festa", "Wall-E"],
+    12: ["As Aventuras de Pi", "Jumanji: Bem-Vindo à Selva", "Guardiões da Galáxia", "O Hobbit"],
+    13: ["Harry Potter e a Pedra Filosofal", "Jogos Vorazes", "Star Wars: O Despertar da Força", "Pantera Negra"],
+    14: ["Vingadores: Ultimato", "Missão Impossível - Efeito Fallout", "Transformers", "Capitã Marvel"],
+    15: ["Mad Max: Estrada da Fúria", "Coringa", "Matrix", "John Wick"],
+    17: ["Inception", "O Cavaleiro das Trevas", "Duna", "Tenet"],
+    18: ["Gladiador", "O Resgate do Soldado Ryan", "Clube da Luta", "O Poderoso Chefão"]
+  };
+
+  let opcoes = filmes[idade];
+  
+  if (!opcoes) {
+    return "Idade não encontrada";
+  }
+
+  if (gostaDeAventura && gostaDeAcao) {
+    return opcoes[0];
+  } else if (gostaDeAventura) {
+    return opcoes[1];
+  } else if (gostaDeAcao) {
+    return opcoes[2];
   } else {
-    if (gostaDeAventura && gostaDeAcao) {
-      return "Frozen 2";
-    } else if (gostaDeAventura) {
-      return "Como Treinar o Seu Dragão 3";
-    } else if (gostaDeAcao) {
-      return "Os Incríveis 2";
-    } else {
-      return "Divertida Mente 2";
-    }
+    return opcoes[3];
   }
 }
 
 function corAleatoria() {
   return color(random(255), random(255), random(255));
-}
+      }
