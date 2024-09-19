@@ -2,10 +2,14 @@ let campoIdade;
 let campoAventura;
 let campoAcao;
 let botaoRecomendar;
-let corTexto = '#ff0033'; // Cor do texto que combina com o tema
+let corTexto = '#ff0033'; // Cor do texto fixa
 
 function setup() {
-  createCanvas(700, 400);
+  // Define o tamanho do canvas e o fixa no body
+  let cnv = createCanvas(700, 400);
+  cnv.parent(document.body);
+
+  // Cria o formulário para a interface
   let form = createDiv().id("form-container");
   form.parent(document.body);
 
@@ -23,17 +27,20 @@ function setup() {
     let gostaDeAventura = campoAventura.checked();
     let gostaDeAcao = campoAcao.checked();
     let recomendacao = geraRecomendacao(idade, gostaDeAventura, gostaDeAcao);
-    desenhaRecomendacao(recomendacao);
+    desenhaRecomendacao(recomendacao); // Chama a função para desenhar a recomendação
   });
 }
 
 function desenhaRecomendacao(recomendacao) {
-  background('#2c2c2c'); // Cor de fundo fixa, estilo dark
+  // Desenha o fundo do canvas com cor fixa
+  background('#2c2c2c'); 
+
+  // Define a cor do texto para o tema
   fill(corTexto);
   textAlign(CENTER, CENTER);
   textSize(28);
 
-  // Texto centralizado e estático
+  // Centraliza o texto no canvas
   text(recomendacao, width / 2, height / 2);
 }
 
@@ -66,6 +73,7 @@ function geraRecomendacao(idade, gostaDeAventura, gostaDeAcao) {
 
   let opcoes = filmes[idade];
 
+  // Retorna a recomendação baseada nas preferências
   if (gostaDeAventura && gostaDeAcao) {
     return opcoes[0];
   } else if (gostaDeAventura) {
