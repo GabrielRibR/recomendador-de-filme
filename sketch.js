@@ -16,7 +16,7 @@ function setup() {
   createElement("h2", "Recomendador de Filmes").parent(form);
 
   let labelIdade = createSpan("Sua Idade:").parent(form);
-  campoIdade = createInput("5").parent(form);
+  campoIdade = createInput("0").parent(form);
 
   campoAventura = createCheckbox("Gosta de Aventura?").parent(form);
   campoAcao = createCheckbox("Gosta de Ação?").parent(form);
