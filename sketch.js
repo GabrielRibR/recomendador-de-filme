@@ -44,11 +44,23 @@ function desenhaRecomendacao(recomendacao) {
 function geraRecomendacao(idade, gostaDeAventura, gostaDeAcao) {
   if (idade >= 10) {
     if (idade >= 14) {
-      return "Missão: Impossível - Efeito Fallout";
+      if (gostaDeAcao && gostaDeAventura) {
+        return "Mad Max: Estrada da Fúria";
+      } else if (gostaDeAcao) {
+        return "Vingadores: Ultimato";
+      } else if (gostaDeAventura) {
+        return "Star Wars: O Despertar da Força";
+      } else {
+        return "Missão: Impossível - Efeito Fallout";
+      }
     } else {
       if (idade >= 12) {
-        if(gostaDeAventura || gostaDeAcao) {
+        if(gostaDeAventura && gostaDeAcao) {
+          return "Guardiões da Galáxia Vol. 3";
+        } else if (gostaDeAventura) {
           return "Homem-Aranha: No Aranhaverso";
+        } else if (gostaDeAcao) {
+          return "Transformers: O Despertar das Feras";
         } else {
           return "Godzilla e Kong: O Novo Império";
         }
@@ -61,8 +73,12 @@ function geraRecomendacao(idade, gostaDeAventura, gostaDeAcao) {
       }
     }
   } else {
-    if (gostaDeAventura) {
+    if (gostaDeAventura && gostaDeAcao) {
+      return "Frozen 2";
+    } else if (gostaDeAventura) {
       return "Como Treinar o Seu Dragão 3";
+    } else if (gostaDeAcao) {
+      return "Os Incríveis 2";
     } else {
       return "Divertida Mente 2";
     }
