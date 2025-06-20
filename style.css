@@ -1,78 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-html, body {
+* {
   margin: 0;
   padding: 0;
-  background-color: #1b1b1b;
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
   height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#form-container {
-  background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+.container {
+  background: rgba(255, 255, 255, 0.1);
   padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
   text-align: center;
-  width: 300px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  max-width: 400px;
+  width: 90%;
 }
 
-h2 {
-  color: #ff0033;
-  font-size: 24px;
-  margin-bottom: 20px;
+.container h1 {
+  font-size: 2em;
+  margin-bottom: 15px;
 }
 
-span, label {
-  color: #f1f1f1;
-  font-size: 16px;
+.container p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
 }
 
-input[type="text"] {
-  padding: 10px;
-  margin-top: 10px;
-  width: 120px;
-  text-align: center;
-  border: 2px solid #333;
-  background-color: #2a2a2a;
-  color: #f1f1f1;
-  border-radius: 25px;
-  outline: none;
-  transition: border-color 0.3s;
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #fff;
+  color: #764ba2;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
 }
 
-input[type="text"]:focus {
-  border-color: #ff0033;
-}
-
-input[type="checkbox"] {
-  margin-right: 10px;
-}
-
-button {
-  padding: 10px 20px;
-  margin-top: 20px;
-  background-color: #ff0033;
-  color: white;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-button:hover {
-  background-color: #cc0029;
-  transform: translateY(-2px);
-}
-
-canvas {
-  display: block;
-  margin-top: 30px;
-  border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-  background: linear-gradient(45deg, #ff0033, #2c2c2c);
+.btn:hover {
+  background-color: #ddd;
 }
